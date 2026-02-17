@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Analyzer</title>
+<link rel="stylesheet" href="{% static 'styles/index.css' %}">
+</head>
+
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()" id="themeIcon">🌙</div>
+
+<h1>AI Resume Analyzer</h1>
+
+<div class="container">
+<div class="section-block">
+    <div class="upload-card">
+
+        <div class="upload-box" id="uploadBox" onclick="fileInput.click()">
+            <div id="uploadContent">
+                <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" width="40" alt="Upload Icon">
+                <p>Drag & Drop Resume (PDF)</p>
+            </div>
+            <input type="file" id="fileInput" accept="application/pdf">
+        </div>
+
+        <div id="filePreview" class="file-preview"></div>
+
+        <input type="text" id="jobTitle" placeholder="Software Engineer, Backend Developer...">
+
+        <button class="submit-btn" onclick="uploadAndSend()">
+            Analyze Resume
+        </button>
+
+    </div>
+</div>
+
+<div class="section-block">
+<div class="score-wrapper">
+<h2>Resume Score</h2>
+<div class="score" id="scoreValue">--%</div>
+
+<div class="cards">
+<div class="card"><h3>Summary</h3><div class="percentage">--%</div><div class="good">Good: Clear intro</div><div class="bad">Bad: Too short</div></div>
+<div class="card"><h3>Education</h3><div class="percentage">--%</div><div class="good">Good: Relevant degree</div><div class="bad">Bad: Missing GPA</div></div>
+<div class="card"><h3>Skills</h3><div class="percentage">--%</div><div class="good">Good: Strong stack</div><div class="bad">Bad: Missing tools</div></div>
+<div class="card"><h3>Experience</h3><div class="percentage">--%</div><div class="good">Good: 2+ years</div><div class="bad">Bad: No metrics</div></div>
+<div class="card"><h3>Projects</h3><div class="percentage">--%</div><div class="good">Good: Real projects</div><div class="bad">Bad: No links</div></div>
+<div class="card"><h3>Certifications</h3><div class="percentage">--%</div><div class="good">Good: Updated</div><div class="bad">Bad: Few certs</div></div>
+<div class="card"><h3>Achievements</h3><div class="percentage">--%</div><div class="good">Good: Awards</div><div class="bad">Bad: Not quantified</div></div>
+<div class="card"><h3>Contact & Others</h3><div class="percentage">--%</div><div class="good">Good: Email present</div><div class="bad">Bad: No LinkedIn</div></div>
+</div>
+</div>
+</div>
+
+<div class="section-block">
+<div class="how-wrapper">
+<h2>How It Works</h2>
+<div class="steps">
+<div class="step"><img src="https://cdn-icons-png.flaticon.com/512/724/724933.png"><p>Upload Resume</p></div>
+<div class="step"><img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"><p>AI Analyzes</p></div>
+<div class="step"><img src="https://cdn-icons-png.flaticon.com/512/942/942748.png"><p>Get Detailed Report</p></div>
+</div>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 AI Resume Analyzer
+</footer>
+
+<script src="{% static 'scripts/index.js' %}"></script>
+</body>
+</html>
